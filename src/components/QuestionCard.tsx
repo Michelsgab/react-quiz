@@ -24,15 +24,14 @@ export default function QuestionCards({
       </p>
       <p dangerouslySetInnerHTML={{ __html: question }}></p>
       <div>
-        {answers.map((answer) => (
-          <div>
+        {answers.map((answer, index) => (
+          <div key={index}>
             <button disabled={userAnswer} onClick={callback}>
               <span dangerouslySetInnerHTML={{ __html: answer }}></span>
             </button>
           </div>
         ))}
       </div>
-      <div>Ola</div>
     </>
   );
 }
